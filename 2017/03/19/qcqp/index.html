@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="总结,二次规划,全局优化," />
 
 
 
@@ -84,13 +84,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://fukai93.net/categories/index.html">
+<meta name="description" content="线性约束不定二次问题的全局解法的笔记GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS
+考虑找到一个不定的二次函数线性约束的全局最优的问题。\ 由于这样的函数可能导致许多局部解，发现全局最优是一个计算上困难的问题。主要考虑下面的几个方法，
+- Benders decomposit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性约束不定二次问题的全局解法的笔记">
+<meta property="og:url" content="http://fukai93.net/2017/03/19/qcqp/index.html">
 <meta property="og:site_name" content="FuKai's Blog">
-<meta property="og:updated_time" content="2017-03-16T02:53:43.172Z">
+<meta property="og:description" content="线性约束不定二次问题的全局解法的笔记GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS
+考虑找到一个不定的二次函数线性约束的全局最优的问题。\ 由于这样的函数可能导致许多局部解，发现全局最优是一个计算上困难的问题。主要考虑下面的几个方法，
+- Benders decomposit">
+<meta property="og:updated_time" content="2017-03-19T12:00:12.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="线性约束不定二次问题的全局解法的笔记">
+<meta name="twitter:description" content="线性约束不定二次问题的全局解法的笔记GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS
+考虑找到一个不定的二次函数线性约束的全局最优的问题。\ 由于这样的函数可能导致许多局部解，发现全局最优是一个计算上困难的问题。主要考虑下面的几个方法，
+- Benders decomposit">
 
 
 
@@ -111,16 +120,10 @@
 
 
 
-  <link rel="canonical" href="http://fukai93.net/categories/"/>
+  <link rel="canonical" href="http://fukai93.net/2017/03/19/qcqp/"/>
 
 
-  <title>
-  
-
-  
-    分类 | FuKai's Blog
-  
-</title>
+  <title> 线性约束不定二次问题的全局解法的笔记 | FuKai's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -151,7 +154,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -284,16 +287,199 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 2 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                线性约束不定二次问题的全局解法的笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-19T20:00:00+08:00" content="2017-03-19">
+              2017-03-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/线性约束二次规划/" itemprop="url" rel="index">
+                    <span itemprop="name">线性约束二次规划</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/19/qcqp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/19/qcqp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/19/qcqp/" class="leancloud_visitors" data-flag-title="线性约束不定二次问题的全局解法的笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/无聊/">无聊</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/线性约束二次规划/">线性约束二次规划</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="线性约束不定二次问题的全局解法的笔记"><a href="#线性约束不定二次问题的全局解法的笔记" class="headerlink" title="线性约束不定二次问题的全局解法的笔记"></a>线性约束不定二次问题的全局解法的笔记</h2><p>GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS</p>
+<p>考虑找到一个不定的二次函数线性约束的全局最优的问题。\ 由于这样的函数可能导致许多局部解，发现全局最优是一个计算上困难的问题。<br>主要考虑下面的几个方法，</p>
+<pre><code>- Benders decomposition，Benders分解
+- concave programming approaches，凹规划方法
+- enumerative techniques，枚举的技术
+- bilinear programming，双线性规划
+</code></pre><p>###问题<br>我们考虑下面的问题，寻找全局最优解</p>
+<p>$$global \quad\min_{x\in P} f(x) = c^x + \frac{1}{2}x^TQx$$</p>
+<p>###性质<br>这个问题有如下复杂性的性质：</p>
+<pre><code>- 此问题是NP-hard 问题。
+- 检查局部最优性的可行解和检查局部最优值是否严格的问题也是NP-Hard。
+- 检查f(x)是否局部严格凸的问题也是NP-hard。
+</code></pre><p>解的性质：</p>
+<pre><code>- 最优解(optimal solution)出现在可行域P的某个边界点。
+- 如果$ x^* $是问题的最优解，则$ x^* $也是线性规划$ \min_{x\in P}\bigtriangledown f(x^*)^Tx $的最优解。
+</code></pre><p>###Benders decomposition（Benders分解）<br>J. F. Benders devised a clever approach for exploiting the structure of mathematical programming problems with complicating variables (variables which, when temporarily fixed, render the remaining optimization problem considerably more tractable). For the class of problems specifically considered by Benders, fixing the values of the complicating variables reduces the given problem to an ordinary linear program, parameterized, of course, by the value of the complicating variables vector. The algorithm he proposed for finding the optimal value of this vector employs a cutting-plane approach for building up adequate representations of (i) the extremal value of the linear program as a function of the parameterizing vector and (ii) the set of values of the parameterizing vector for which the linear program is feasible. Linear programming duality theory was employed to derive the natural families ofcuts characterizing these representations, and the parameterized linear program itself is used to generate what are usually deepest cuts for building up the representations.\<br>Kough 提出了一个用于不定二次问题的算法，该算法使用由Geoffrion （也参见[9]）开发的广义Benders cut procedure。 所考虑的问题是以下（极性）形式：</p>
+<p>\begin{alignat}{2}<br>\max\quad &amp; x^Tx - y^Ty &amp;{}&amp; \<br>\mbox{s.t.}\quad<br>&amp;Ax+By+c \geq 0 &amp;\quad&amp; x\in R^n,y\in R^t\<br>&amp; &amp;{}&amp;  \nonumber<br>\end{alignat}<br>目标函数到x，y变量（凸和凹部分）的可分性表明了Benders cut procedure的自然分解,以此来应用Benders cut method.\<br>如果$x_0$是一个固定的可行解，我们定义如下的凸问题$P(x<em>0)$:\<br>\begin{alignat}{2}<br>\max</em>{y} \quad  &amp; -y^Ty \<br>\mbox{s.t.} \quad &amp; By \geq -(Ax_0 +c)<br>\end{alignat}<br>$y_0$是上述问题的最优解。通过$P(x_0)$我们定义：<br>$$v(x_0)= x^Tx-y_0^Ty_0$$<br>问题（1）等价于下面的问题$P<em>v(x)$:<br>\begin{alignat}{1}<br>\max</em>{x} \quad  &amp; v(x) \<br>\mbox{s.t.} \quad &amp; x\in R = { x: Ax+By+c \geq 0 \quad for \quad some\quad y}<br>\end{alignat}<br>第k步问题是<br>\begin{alignat}{2}<br>\max \quad  &amp; v_k(x) \<br>\mbox{s.t.} \quad &amp; x\in R_k<br>\end{alignat}<br>如果最优解$x<em>k \in R$,生成Benders feasibility cut 以获得$R</em>{k+1}$。 否则，生成Benders cut以获得$v_{k+1}(x)$.\<br>此算法有$\epsilon$-有限收敛性.</p>
+<p>###CONCAVE PROGRAMMING METHODS<br>使用仿射变换（我们可以将二次问题转换为具有可分离目标函数的问题。假设二次问题是不定的，可以假定问题具有以下可分离形式：</p>
+<p>\begin{alignat}{2}<br>\min \quad  &amp; f(x)-g(y) \<br>\mbox{s.t.} \quad &amp; Ax+By+c \leq 0\<br> &amp; x\in X, y \in Y<br>\end{alignat}<br>其中，$X,Y$是多面体集合。\<br>Tuy转换成下面的全局凹最小问题的等价形式：<br>\begin{alignat}{3}<br>\min \quad  &amp; t-g(y) \<br>\mbox{s.t.} \quad &amp; f(x)\leq t\<br>&amp;Ax+By+c \leq 0\<br>&amp;x\in X,y\in Y<br>\end{alignat}<br>目标函数是凹的，约束集合是凸的。Tuy使用了concave programming techniques来提出了算法。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag">#总结</a>
+          
+            <a href="/tags/二次规划/" rel="tag">#二次规划</a>
+          
+            <a href="/tags/全局优化/" rel="tag">#全局优化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/16/happy-Friday/" rel="next" title="happy Friday!">
+                <i class="fa fa-chevron-left"></i> happy Friday!
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
   </div>
 
 
@@ -305,6 +491,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/19/qcqp/"
+           data-title="线性约束不定二次问题的全局解法的笔记" data-url="http://fukai93.net/2017/03/19/qcqp/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/qi.jpg"
@@ -375,6 +578,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性约束不定二次问题的全局解法的笔记"><span class="nav-number">1.</span> <span class="nav-text">线性约束不定二次问题的全局解法的笔记</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -478,6 +692,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
