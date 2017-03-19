@@ -94,7 +94,7 @@
 <meta property="og:description" content="线性约束不定二次问题的全局解法的笔记GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS
 考虑找到一个不定的二次函数线性约束的全局最优的问题。\ 由于这样的函数可能导致许多局部解，发现全局最优是一个计算上困难的问题。主要考虑下面的几个方法，
 - Benders decomposit">
-<meta property="og:updated_time" content="2017-03-19T12:00:12.061Z">
+<meta property="og:updated_time" content="2017-03-19T12:05:40.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性约束不定二次问题的全局解法的笔记">
 <meta name="twitter:description" content="线性约束不定二次问题的全局解法的笔记GLOBAL OPTIMIZATION ALGORITHMS FOR LINEARLY CONSTRAINED INDEFINITE QUADRATIC PROBLEMS
@@ -387,19 +387,30 @@
 - concave programming approaches，凹规划方法
 - enumerative techniques，枚举的技术
 - bilinear programming，双线性规划
-</code></pre><p>###问题<br>我们考虑下面的问题，寻找全局最优解</p>
+</code></pre><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我们考虑下面的问题，寻找全局最优解</p>
 <p>$$global \quad\min_{x\in P} f(x) = c^x + \frac{1}{2}x^TQx$$</p>
-<p>###性质<br>这个问题有如下复杂性的性质：</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>这个问题有如下复杂性的性质：</p>
 <pre><code>- 此问题是NP-hard 问题。
 - 检查局部最优性的可行解和检查局部最优值是否严格的问题也是NP-Hard。
 - 检查f(x)是否局部严格凸的问题也是NP-hard。
 </code></pre><p>解的性质：</p>
 <pre><code>- 最优解(optimal solution)出现在可行域P的某个边界点。
-- 如果$ x^* $是问题的最优解，则$ x^* $也是线性规划$ \min_{x\in P}\bigtriangledown f(x^*)^Tx $的最优解。
-</code></pre><p>###Benders decomposition（Benders分解）<br>J. F. Benders devised a clever approach for exploiting the structure of mathematical programming problems with complicating variables (variables which, when temporarily fixed, render the remaining optimization problem considerably more tractable). For the class of problems specifically considered by Benders, fixing the values of the complicating variables reduces the given problem to an ordinary linear program, parameterized, of course, by the value of the complicating variables vector. The algorithm he proposed for finding the optimal value of this vector employs a cutting-plane approach for building up adequate representations of (i) the extremal value of the linear program as a function of the parameterizing vector and (ii) the set of values of the parameterizing vector for which the linear program is feasible. Linear programming duality theory was employed to derive the natural families ofcuts characterizing these representations, and the parameterized linear program itself is used to generate what are usually deepest cuts for building up the representations.\<br>Kough 提出了一个用于不定二次问题的算法，该算法使用由Geoffrion （也参见[9]）开发的广义Benders cut procedure。 所考虑的问题是以下（极性）形式：</p>
-<p>\begin{alignat}{2}<br>\max\quad &amp; x^Tx - y^Ty &amp;{}&amp; \<br>\mbox{s.t.}\quad<br>&amp;Ax+By+c \geq 0 &amp;\quad&amp; x\in R^n,y\in R^t\<br>&amp; &amp;{}&amp;  \nonumber<br>\end{alignat}<br>目标函数到x，y变量（凸和凹部分）的可分性表明了Benders cut procedure的自然分解,以此来应用Benders cut method.\<br>如果$x_0$是一个固定的可行解，我们定义如下的凸问题$P(x<em>0)$:\<br>\begin{alignat}{2}<br>\max</em>{y} \quad  &amp; -y^Ty \<br>\mbox{s.t.} \quad &amp; By \geq -(Ax_0 +c)<br>\end{alignat}<br>$y_0$是上述问题的最优解。通过$P(x_0)$我们定义：<br>$$v(x_0)= x^Tx-y_0^Ty_0$$<br>问题（1）等价于下面的问题$P<em>v(x)$:<br>\begin{alignat}{1}<br>\max</em>{x} \quad  &amp; v(x) \<br>\mbox{s.t.} \quad &amp; x\in R = { x: Ax+By+c \geq 0 \quad for \quad some\quad y}<br>\end{alignat}<br>第k步问题是<br>\begin{alignat}{2}<br>\max \quad  &amp; v_k(x) \<br>\mbox{s.t.} \quad &amp; x\in R_k<br>\end{alignat}<br>如果最优解$x<em>k \in R$,生成Benders feasibility cut 以获得$R</em>{k+1}$。 否则，生成Benders cut以获得$v_{k+1}(x)$.\<br>此算法有$\epsilon$-有限收敛性.</p>
-<p>###CONCAVE PROGRAMMING METHODS<br>使用仿射变换（我们可以将二次问题转换为具有可分离目标函数的问题。假设二次问题是不定的，可以假定问题具有以下可分离形式：</p>
-<p>\begin{alignat}{2}<br>\min \quad  &amp; f(x)-g(y) \<br>\mbox{s.t.} \quad &amp; Ax+By+c \leq 0\<br> &amp; x\in X, y \in Y<br>\end{alignat}<br>其中，$X,Y$是多面体集合。\<br>Tuy转换成下面的全局凹最小问题的等价形式：<br>\begin{alignat}{3}<br>\min \quad  &amp; t-g(y) \<br>\mbox{s.t.} \quad &amp; f(x)\leq t\<br>&amp;Ax+By+c \leq 0\<br>&amp;x\in X,y\in Y<br>\end{alignat}<br>目标函数是凹的，约束集合是凸的。Tuy使用了concave programming techniques来提出了算法。</p>
+ 如果$ x^* $是问题的最优解，则$ x^* $也是线性规划$ \min_{x\in P}\bigtriangledown f(x^*)^Tx $的最优解。
+</code></pre><h3 id="Benders-decomposition（Benders分解）"><a href="#Benders-decomposition（Benders分解）" class="headerlink" title="Benders decomposition（Benders分解）"></a>Benders decomposition（Benders分解）</h3><p>J. F. Benders devised a clever approach for exploiting the structure of mathematical programming problems with complicating variables (variables which, when temporarily fixed, render the remaining optimization problem considerably more tractable). For the class of problems specifically considered by Benders, fixing the values of the complicating variables reduces the given problem to an ordinary linear program, parameterized, of course, by the value of the complicating variables vector. The algorithm he proposed for finding the optimal value of this vector employs a cutting-plane approach for building up adequate representations of (i) the extremal value of the linear program as a function of the parameterizing vector and (ii) the set of values of the parameterizing vector for which the linear program is feasible. Linear programming duality theory was employed to derive the natural families ofcuts characterizing these representations, and the parameterized linear program itself is used to generate what are usually deepest cuts for building up the representations.\<br>Kough 提出了一个用于不定二次问题的算法，该算法使用由Geoffrion （也参见[9]）开发的广义Benders cut procedure。 所考虑的问题是以下（极性）形式：</p>
+<p>\begin{alignat}{2}<br>\max\quad &amp; x^Tx - y^Ty &amp;{}&amp; \<br>\mbox{s.t.}\quad<br>&amp;Ax+By+c \geq 0 &amp;\quad&amp; x\in R^n,y\in R^t\<br>&amp; &amp;{}&amp;  \nonumber<br>\end{alignat}</p>
+<p>目标函数到x，y变量（凸和凹部分）的可分性表明了Benders cut procedure的自然分解,以此来应用Benders cut method.\<br>如果$x_0$是一个固定的可行解，我们定义如下的凸问题$P(x_0)$:</p>
+<p>\begin{alignat}{2}<br>\max_{y} \quad  &amp; -y^Ty \<br>\mbox{s.t.} \quad &amp; By \geq -(Ax_0 +c)<br>\end{alignat}</p>
+<p>$y_0$是上述问题的最优解。通过$P(x_0)$我们定义：<br>$$v(x_0)= x^Tx-y_0^Ty_0$$</p>
+<p>问题（1）等价于下面的问题$P_v(x)$:</p>
+<p>\begin{alignat}{1}<br>\max_{x} \quad  &amp; v(x) \<br>\mbox{s.t.} \quad &amp; x\in R = { x: Ax+By+c \geq 0 \quad for \quad some\quad y}<br>\end{alignat}</p>
+<p>第k步问题是</p>
+<p>\begin{alignat}{2}<br>\max \quad  &amp; v_k(x) \<br>\mbox{s.t.} \quad &amp; x\in R_k<br>\end{alignat}</p>
+<p>如果最优解$x<em>k \in R$,生成Benders feasibility cut 以获得$R</em>{k+1}$。 否则，生成Benders cut以获得$v_{k+1}(x)$.\<br>此算法有$\epsilon$-有限收敛性.</p>
+<h3 id="CONCAVE-PROGRAMMING-METHODS"><a href="#CONCAVE-PROGRAMMING-METHODS" class="headerlink" title="CONCAVE PROGRAMMING METHODS"></a>CONCAVE PROGRAMMING METHODS</h3><p>使用仿射变换（我们可以将二次问题转换为具有可分离目标函数的问题。假设二次问题是不定的，可以假定问题具有以下可分离形式：</p>
+<p>\begin{alignat}{2}<br>\min \quad  &amp; f(x)-g(y) \<br>\mbox{s.t.} \quad &amp; Ax+By+c \leq 0\<br> &amp; x\in X, y \in Y<br>\end{alignat}</p>
+<p>其中，$X,Y$是多面体集合。\<br>Tuy转换成下面的全局凹最小问题的等价形式：</p>
+<p>\begin{alignat}{3}<br>\min \quad  &amp; t-g(y) \<br>\mbox{s.t.} \quad &amp; f(x)\leq t\<br>&amp;Ax+By+c \leq 0\<br>&amp;x\in X,y\in Y<br>\end{alignat}</p>
+<p>目标函数是凹的，约束集合是凸的。Tuy使用了concave programming techniques来提出了算法。</p>
 
       
     </div>
@@ -585,7 +596,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性约束不定二次问题的全局解法的笔记"><span class="nav-number">1.</span> <span class="nav-text">线性约束不定二次问题的全局解法的笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性约束不定二次问题的全局解法的笔记"><span class="nav-number">1.</span> <span class="nav-text">线性约束不定二次问题的全局解法的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性质"><span class="nav-number">1.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Benders-decomposition（Benders分解）"><span class="nav-number">1.3.</span> <span class="nav-text">Benders decomposition（Benders分解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAVE-PROGRAMMING-METHODS"><span class="nav-number">1.4.</span> <span class="nav-text">CONCAVE PROGRAMMING METHODS</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
